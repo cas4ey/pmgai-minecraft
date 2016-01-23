@@ -25,7 +25,8 @@ import constants as c
 # --------------------------------------------------------------------
 
 class Lab2Constants(object):
-    WORLD_SIZE = 8  # Size in pymcworldgen chunks
+    WORLD_SIZE = 8  # Size in pymcworldgen chunks (this is half size)
+    ISLAND_SIZE = 32  # Size of an island in blocks (this is also half size)
     GROUND_MATERIAL = c.MAT_DIRT  # c.MAT_SNOW
     SEA_LEVEL = 0  # Global sea level height (y axis)
     SEA_MATERIAL = c.MAT_SNOW
@@ -51,7 +52,7 @@ class DistanceField(object):
         ny = y + math.sin(0.75 + x/7.8 + z/9.1)
 
         # Manhattan distance field to center of map: floating iceberg.
-        if abs(nx) + abs(nz) + abs(ny*8) < 64:
+        if abs(nx) + abs(nz) + abs(ny*8) < Lab2Constants.ISLAND_SIZE:
             return Lab2Constants.GROUND_MATERIAL
 
         # Anything that's not solid but under the sea level?
