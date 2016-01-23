@@ -25,6 +25,7 @@ import constants as c
 # --------------------------------------------------------------------
 
 class Lab2Constants(object):
+    WORLD_SIZE = 8  # Size in pymcworldgen chunks
     GROUND_MATERIAL = c.MAT_DIRT  # c.MAT_SNOW
     SEA_LEVEL = 0  # Global sea level height (y axis)
     SEA_MATERIAL = c.MAT_SNOW
@@ -85,8 +86,8 @@ def generate():
     start_time = time.clock()
     island = saveutils.createWorld("nuclai.world")
 
-    worldsizex = 8
-    worldsizez = 8
+    worldsizex = Lab2Constants.WORLD_SIZE
+    worldsizez = Lab2Constants.WORLD_SIZE
 
     pipeline = DistanceField()
 
