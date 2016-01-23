@@ -15,6 +15,21 @@ import saveutils
 import constants as c
 
 
+####################################################
+# courses.nucl.ai Unit#2 Lab#2
+#          :
+# author   : Victor Zarubkin
+# contacts : email              - v.s.zarubkin@gmail.com
+#          : aigamedev.com user - cdeveloper
+#          : github user        - cas4ey (http://github.com/cas4ey)
+# --------------------------------------------------------------------
+
+class Lab2Constants(object):
+    GROUND_MATERIAL = c.MAT_DIRT  # c.MAT_SNOW
+    SEA_LEVEL = -10  # Global sea level height (y axis)
+    SEA_MATERIAL = c.MAT_WATER
+####################################################
+
 
 class DistanceField(object):
     """Generates an island (currently iceberg) as a distance field.  This can be used either
@@ -36,11 +51,11 @@ class DistanceField(object):
 
         # Manhattan distance field to center of map: floating iceberg.
         if abs(nx) + abs(nz) + abs(ny*8) < 64:
-            return c.MAT_DIRT  # c.MAT_SNOW
+            return Lab2Constants.GROUND_MATERIAL
 
         # Anything that's not solid but under the sea level?
-        if y < 0:
-            return c.MAT_WATER
+        if y < Lab2Constants.SEA_LEVEL:
+            return Lab2Constants.SEA_MATERIAL
 
         return c.MAT_AIR
 
