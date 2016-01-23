@@ -26,8 +26,8 @@ import constants as c
 
 class Lab2Constants(object):
     GROUND_MATERIAL = c.MAT_DIRT  # c.MAT_SNOW
-    SEA_LEVEL = -10  # Global sea level height (y axis)
-    SEA_MATERIAL = c.MAT_WATER
+    SEA_LEVEL = 0  # Global sea level height (y axis)
+    SEA_MATERIAL = c.MAT_SNOW
 ####################################################
 
 
